@@ -1,0 +1,101 @@
+body {
+  background-color: rgb(244, 201, 231);
+  color: rgb(187, 198, 133);
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+}
+
+#title {
+  color: rgb(101, 206, 241);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+}
+.game-board {
+  display: grid;
+  gap: 10px;
+  width: 90%;
+  max-width: 600px;
+  aspect-ratio: 1;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cards {
+  margin: 48px auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, 100px); 
+  justify-content: center; 
+}
+
+.card {
+  height: 100px;
+  width: 100px;
+  background: #0e1101;
+  border: 3px solid #010902;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 10px; 
+  aspect-ratio: 1; 
+}
+
+.card:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card[data-revealed="true"] {
+  background-color: #55d3e9;
+  color: white;
+  cursor: default;
+  transform: none; 
+}
+
+#hello {
+  color: rgb(38, 217, 230);
+  font-family: "Verdana", "Sans-serif";
+  font-size: 24px; 
+  font-weight: bold; 
+  text-align: center;
+  margin-top: 20px; 
+  margin-bottom: 10px;
+}
+
+#endMessage {
+  width: 300px;
+  margin: auto;
+  padding: 45px;
+  background-color: #55d3e9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  color: white;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeIn 0.5s forwards;
+}
+
+#endMessage h2 {
+  margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#foundPairs {
+  font-size: 25px;
+  color: rgb(187, 198, 133);
+}
